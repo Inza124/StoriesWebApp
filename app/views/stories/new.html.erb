@@ -1,17 +1,17 @@
 <h1> Dodaj Opowiastke </h1>
-<%= form_for :story do |x| %>
+<%= form_for :story, url: stories_path do |x| %>
 <p>
-  <label> Autor </label> <br>
+  <%= x.label :auth %><br>
   <%= x.text_field :auth %>
 </p>
 
 <p>
-  <label> Tytuł </label> <br>
+  <%= x.label :title %><br>
   <%= x.text_field :title %>
 </p>
 
 <p>
-  <label> Treść </label> <br>
+  <%= x.label :body %><br>
   <%= x.text_area :body %><br>
 </p>
 
