@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 
 
-
-
 <html>
   <head>
     <title>StoriesWebApp</title>
@@ -19,18 +17,43 @@
       font-family: 'Josefin Sans', sans-serif; }
 
     .navbar-inverse {
-      background-color: #91872a;
+      background-color: #0be0e8;
       border-color: #ce0000; }
 
     .navbar-brand {
-      padding: 0px; }
+      padding: 0px;
+      margin-bottom: 4px; }
 
     .navbar-nav  {
     font-family: 'Nova Flat', cursive;
+    font-size: 25px;
     color: purple; }
 
     .navbar-nav > .active > a {
-    color: red;
+    color: red; }
+
+    .glyphicon {
+    font-size: 120px; }
+
+    .navbar-right {
+      font-size:  20px;
+      padding: 10px; }
+
+    .glyphicon {
+      font-size:  16px;
+      color: blue;
+     }
+
+    .nav>li {
+    display: inline-block; }
+
+    .btn {
+    color: #008774;
+    background-color: #42f4dc; }
+
+    .btn:hover {
+    background-color: #d3d3d3; }
+
 }
 
     </style>
@@ -45,7 +68,8 @@
        <%= link_to image_tag("opowiastki.png", alt: "logo"), '/', class: 'navbar-brand' %>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="#">Start</a></li>
+      <li><a href="/">Start</a></li>
+      <li><a href="/about">Poczekalnia</a></li>
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Informacje <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="#">O stronie</a></li>
@@ -53,16 +77,36 @@
           <li><a href="#">Kontakt</a></li>
         </ul>
       </li>
-      <li><a href="about">Poczekalnia</a></li>
     </ul>
-    <!--
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <ul class="nav navbar-right">
+      <% if !user_signed_in? %>
+      <%= link_to new_user_session_path, class: "btn btn-small btn-link" do %>
+      <span class="glyphicon glyphicon-log-in"></span> Zaloguj
+      <% end %>
+
+      <%= link_to new_user_registration_path , class: "btn btn-small btn-link" do %>
+      <span class="glyphicon glyphicon-user"></span> Rejestracja
+      <% end %>
+
+      <% end %>
+
+      <% if user_signed_in? %>
+
+      <%= link_to new_story_path,  class: "btn btn-small btn-link" do %>
+      <span class="glyphicon glyphicon-pencil"></span> Napisz
+      <% end %>
+
+      <%= link_to destroy_user_session_path, :method => :delete, class: "btn btn-small btn-link" do %>
+      <span class="glyphicon glyphicon-log-out"></span> Wyloguj
+      <% end %>
+
+      <% end %>
     </ul>
-  -->
+
   </div>
 </nav>
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
