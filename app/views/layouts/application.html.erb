@@ -7,6 +7,8 @@
     <%= csrf_meta_tags %>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Nova+Flat" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag    'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -30,7 +32,13 @@
     color: purple; }
 
     .navbar-nav > .active > a {
-    color: red; }
+    background-color: red; }
+
+    .navbar-nav > li:active {
+    background-color: black; }
+
+    .navbar-nav > li:hover {
+    background-color: green; }
 
     .glyphicon {
     font-size: 120px; }
@@ -54,6 +62,7 @@
     .btn:hover {
     background-color: #d3d3d3; }
 
+
     #welcome {
       color: #19382f;
       font-family: 'Nova Flat', cursive;
@@ -61,6 +70,34 @@
       margin-top: 3px;
       margin-right: 8px; }
 
+    #drop {
+      color: #008774;
+      font-family: 'Nova Flat', cursive;
+      background-color: #42f4dc; }
+
+    #drop:hover {
+      background-color: #d3d3d3; }
+
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1; }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block; }
+
+        .dropdown:hover .dropdown-content {
+          display: block; }
+
+        .dropdown {
+          position: relative;
+          display: inline-block; }
 }
 
     </style>
@@ -92,15 +129,33 @@
       <% end %>
 
       <%= link_to new_user_registration_path , class: "btn btn-small btn-link" do %>
-      <span class="glyphicon glyphicon-user"></span> Rejestracja
+      <span class="glyphicon glyphicon-plus"></span> Rejestracja
       <% end %>
 
       <% end %>
 
       <% if user_signed_in? %>
       <label id="welcome">Witaj, <%= current_user.username %></label>
+
       <%= link_to new_story_path,  class: "btn btn-small btn-link" do %>
       <span class="glyphicon glyphicon-pencil"></span> Napisz
+      <% end %>
+
+
+      <div class="dropdown">
+        <button id="drop" type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="glyphicon glyphicon-stats"></span> Profil
+        </button>
+        <div class="dropdown-content">
+          <%= link_to "Edytuj", new_story_path,  class: "btn btn-small btn-link" %>
+          <%= link_to "Wyświetl", new_story_path,  class: "btn btn-small btn-link" %>
+          <%= link_to "Usuń", new_story_path,  class: "btn btn-small btn-link" %>
+        </div>
+      </div>
+
+
+      <%= link_to new_story_path,  class: "btn btn-small btn-link" do %>
+      <span class="glyphicon glyphicon-stats"></span> Statystyki
       <% end %>
 
       <%= link_to destroy_user_session_path, :method => :delete, class: "btn btn-small btn-link" do %>
