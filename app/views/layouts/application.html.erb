@@ -54,6 +54,13 @@
     .btn:hover {
     background-color: #d3d3d3; }
 
+    #welcome {
+      color: #19382f;
+      font-family: 'Nova Flat', cursive;
+      font-size: 18px;
+      margin-top: 3px;
+      margin-right: 8px; }
+
 }
 
     </style>
@@ -91,7 +98,7 @@
       <% end %>
 
       <% if user_signed_in? %>
-
+      <label id="welcome">Witaj, <%= current_user.username %></label>
       <%= link_to new_story_path,  class: "btn btn-small btn-link" do %>
       <span class="glyphicon glyphicon-pencil"></span> Napisz
       <% end %>
