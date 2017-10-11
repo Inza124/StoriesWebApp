@@ -1,3 +1,7 @@
-<h3> <%= @story.auth %> </h3> <br>
-<h2> <%= @story.title %> </h2> <br>
-<p> <%= @story.body %> </p>
+<h3> <%= @story.auth %> </h3> 
+<h2> <%= @story.title %> </h2>
+<p> <%= @story.body %> </p> <br>
+<h2> <%= @story.comments.count %> Komentarzy </h2>
+  <%= render @story.comments %>
+  <h3> Dodaj komentarz </h3>
+  <%= render 'comments/form' %>
