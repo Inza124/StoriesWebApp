@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 root 'stories#index'
 
 get 'about' => 'pages#about'
-match '/users/:id',     to: 'users#show',       via: 'get'
+match '/users/:id',     to: 'users#show',   :as => :user,     via: 'get'
 
 resources :users, :only =>[:show]
 resources :stories
