@@ -1,3 +1,4 @@
-<h3> <%= @story.auth %> </h3> <br>
-<h2> <%= @story.title %> </h2> <br>
-<p> <%= @story.body %> </p>
+<h3> Autor: <%= @story.auth %> </h3>
+<h2> Tytuł: <%= @story.title %> </h2>
+<p> <%= @story.body %> </p> <br>
+<div> <%= render 'comments/comment' %> </div>

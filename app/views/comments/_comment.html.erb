@@ -1,0 +1,10 @@
+<button data-toggle="collapse" data-target="#demo" class="btn-danger btn-small btn"><%= @story.comments.count %> Komentarzy </button> <br>
+<div id="demo" class="collapse">
+<h3> Komentarze </h3>
+<%= @comments.each do |comment| %>
+<p> <%= comment.user.username %> napisał/a </p>
+<p> <%= comment.content %> </p>
+<% end %>
+</div>
+  <h3> Dodaj komentarz </h3>
+<%= render 'comments/form' %>

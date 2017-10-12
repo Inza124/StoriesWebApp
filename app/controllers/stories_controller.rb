@@ -1,11 +1,12 @@
 class StoriesController < ApplicationController
 
   def index
-      @stories = Story.all
+
   end
 
   def show
       @story = Story.find(params[:id])
+      @comments = Comment.where(story_id: @story).order("created_at DESC")
   end
 
   def new

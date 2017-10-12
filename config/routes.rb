@@ -11,4 +11,8 @@ match '/users/:id',     to: 'users#show',   :as => :user,     via: 'get'
 resources :users, :only =>[:show]
 resources :stories
 
+resources :stories do
+  resources :comments
+end
+
 end
