@@ -1,3 +1,8 @@
+<style type = "text/css">
+body {
+  font-size: 30px; }
+</style>
+
 <%= form_tag story_path(@story), method: "put" do %>
   <label>Tytuł</label><br>
   <%= text_field_tag :title, @story.title %><br>

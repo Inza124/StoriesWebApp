@@ -1,3 +1,17 @@
+<style type = "text/css">
+.field {
+  font-size: 20px;
+  margin-left: 80px; }
+
+  .actions {
+    font-size: 20px;
+    margin-left: 80px; }
+
+  h2 {
+    font-size: 40px;
+    margin-left: 80px; }
+</style>
+
 <h2>Rejestracja</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -25,10 +39,10 @@
     <%= f.label :Potwierdź %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
+ <br>
   <div class="actions">
     <%= f.submit "Zarejestruj się" %>
   </div>
 <% end %>
-
+<br>
 <%= render "devise/shared/links" %>

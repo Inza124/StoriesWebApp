@@ -1,5 +1,6 @@
 <% @stories.each do |story| %>
 <% if story.status == 3%>
+  <br>
 <b>Autor: </b> <label> <%= story.auth %> </label> <br>
 <b>Tytuł:</b> <label> <%= story.title %> </label <br>
 <p> <%= story.body %> </p>
@@ -21,6 +22,6 @@
   <%= f.submit "Dodaj" %>
   <% end %>
   </div>
-  <br>
+    <hr style="width: 100%; height: 1px; background-color: #b6c4db;" />
   <% end %>
     <% end %>

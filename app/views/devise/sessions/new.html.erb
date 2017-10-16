@@ -1,3 +1,17 @@
+<style type = "text/css">
+.field {
+  font-size: 20px;
+  margin-left: 80px; }
+
+  .actions {
+    font-size: 20px;
+    margin-left: 80px; }
+
+  h2 {
+    font-size: 40px;
+    margin-left: 80px; }
+</style>
+
 <h2>Logowanie</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,10 +31,11 @@
       <%= f.label :Zapamiętaj_mnie %>
     </div>
   <% end -%>
-
+<br>
   <div class="actions">
     <%= f.submit "Zaloguj" %>
   </div>
 <% end %>
-
+<br>
+<br>
 <%= render "devise/shared/links" %>

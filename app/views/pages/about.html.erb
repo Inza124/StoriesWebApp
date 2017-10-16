@@ -1,5 +1,6 @@
 <% @stories.each do |story| %>
 <% if story.status == nil%>
+<br>
 <b>Autor: </b> <label> <%= story.auth %> </label> <br>
 <b>Tytuł:</b> <label> <%= story.title %> </label <br>
 <p> <%= story.body %> </p>
@@ -24,6 +25,5 @@
   <% end %>
   </div>
   <hr style="width: 100%; height: 1px; background-color: #b6c4db;" />
-  <br>
   <% end %>
     <% end %>
