@@ -7,8 +7,9 @@ root 'stories#index'
 
 get 'about' => 'pages#about'
 match '/users/:id',     to: 'users#show',   :as => :user,     via: 'get'
+match '/users',     to: 'users#index',   :as => :users,     via: 'get'
 
-resources :users, :only =>[:show]
+resources :users
 resources :stories
 
 resources :stories do

@@ -17,7 +17,15 @@
     <style type = "text/css">
     body {
       color: purple;
-      font-family: 'Josefin Sans', sans-serif; }
+      font-family: 'Josefin Sans', sans-serif;
+      background-color: red; }
+
+      .col-sm-6 {
+          background-color: #42f4f4;}
+          
+      .col-sm-3 {
+          }
+
 
     .navbar-inverse {
       background-color: #0be0e8;
@@ -145,6 +153,10 @@
       <% if current_user.admin? %>
       <label id="welcome">KONTO ADMINISTRACYJNE</label>
 
+      <%= link_to users_path,  class: "btn btn-small btn-link" do %>
+      <span class="glyphicon glyphicon glyphicon-book"></span> Zarządzaj Użytkownikami
+      <% end %>
+
       <%= link_to about_path,  class: "btn btn-small btn-link" do %>
       <span class="glyphicon glyphicon-th"></span> Zarządzaj Treścią
       <% end %>
@@ -192,7 +204,13 @@
 
   </div>
 </nav>
-    <%= yield %>
+<div class="row">
+ <div class="col-sm-3"></div>
+ <div class="col-sm-6" style="overflow: scroll;  height:768px;">
+       <%= yield %>
+ </div>
+ <div class="col-sm-3"></div>
+</div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </body>
