@@ -1,7 +1,15 @@
-<%= @stories.each do |story| %>
+<% @stories.each do |story| %>
+<% if story.status == nil%>
 <b>Autor: </b> <label> <%= story.auth %> </label> <br>
 <b>Tytuł:</b> <label> <%= story.title %> </label <br>
 <p> <%= story.body %> </p>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+<%= link_to "Akceptuj",  {:controller => "stories", :action => "status_approved", :id => story}, class: "btn btn-small btn-success" %>
+<%= link_to "Archiwizuj",  {:controller => "stories", :action => "status_archive", :id => story}, class: "btn btn-small btn-primary" %>
+<%= link_to "Edytuj",  {:controller => "stories", :action => "edit", :id => story}, class: "btn btn-small btn-info" %> <br> <br>
+<% end %>
+<% end %>
 <button data-toggle="collapse" data-target="#<%= story.id %>" class="btn-danger btn-small btn" > <%= story.comments.count  %> Komentarzy </button> <br>
 <div id="<%= story.id %>" class="collapse">
 <h3> Komentarze </h3>
@@ -16,4 +24,5 @@
   <% end %>
   </div>
   <br>
+  <% end %>
     <% end %>

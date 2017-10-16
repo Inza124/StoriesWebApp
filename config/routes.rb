@@ -15,4 +15,11 @@ resources :stories do
   resources :comments
 end
 
+resource :story do
+  # Route GET /user/admin_login
+  get 'status_approved', :on => :collection
+  get 'status_archive', :on => :collection
+  get 'edit', :on => :collection
+end
+
 end

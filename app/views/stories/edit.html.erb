@@ -1,0 +1,9 @@
+<%= form_tag story_path(@story), method: "put" do %>
+  <label>Tytuł</label><br>
+  <%= text_field_tag :title, @story.title %><br>
+
+  <label>Treść</label><br>
+  <%= text_area_tag :body, @story.body %><br>
+
+  <%= submit_tag "Zapisz" %>
+<% end %>
