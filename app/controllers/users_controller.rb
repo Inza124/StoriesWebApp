@@ -7,5 +7,9 @@ class UsersController < ApplicationController
   @user = current_user.username
   end
 
+  def stat
+    @user = current_user.username
+  end
+
 
 end

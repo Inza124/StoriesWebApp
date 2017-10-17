@@ -1,0 +1,8 @@
+<style type = "text/css">
+body {
+  font-size: 30px; }
+</style>
+
+<h2> Użytkownik:  <%= current_user.username %> </h2>
+<h2> Dołączył do nas: <%= current_user.created_at.strftime("%Y-%m-%d") %> </h2>
+<h2> Napisał:   <%= current_user.comments.count %> Komentarzy </h2>

@@ -8,6 +8,7 @@ root 'stories#index'
 get 'about' => 'pages#about'
 match '/users/:id',     to: 'users#show',   :as => :user,     via: 'get'
 match '/users',     to: 'users#index',   :as => :users,     via: 'get'
+match '/user/stat',     to: 'users#stat',   :as => :user_stats,     via: 'get'
 
 resources :users
 resources :stories
