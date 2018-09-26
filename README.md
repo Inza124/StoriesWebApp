@@ -1,24 +1,43 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Stories Web Application (Opowiastki)
+One of the first applications written by me while learning to create web applications in ruby on rails. This is an application heavily inspired by "Anonimowi" or "Wyznajemy" type portals. The Devise gem has been used to create user roles. I used the PostgreSQL database.
 
-* Ruby version
+## Table of contents
+* [General info](#general-info)
+* [Screenshots](#screenshots)
+* [Technologies](#technologies)
+* [Features](#features)
+* [Status](#status)
+* [Inspiration](#inspiration)
+* [Contact](#contact)
 
-* System dependencies
+## General info
+There are several entities in the application. Like stories, comments, and users. The user can be an administrator or a regular user. Depending on the role, users rights change. For example, the administrator can manage users
 
-* Configuration
+## Screenshots
+![Homepage](http://oi66.tinypic.com/ixrqsw.jpg)
+![Movie view](http://oi66.tinypic.com/2rp7fw9.jpg)
+![Login page](http://oi65.tinypic.com/sbq4rd.jpg)
 
-* Database creation
+## Technologies
+* Ruby - version 2.3.3
+* Rails - version 5.2.1
+* PostgreSQL gem - version 0.18
+* Devise gem - version 4.2
+* HTML, CSS, JS (Bootstrap 4)
 
-* Database initialization
+## Features
+* CRUD comments, stories, users
+* Manage users. 
+* User statistics. 
+* Accepting posts.
 
-* How to run the test suite
+## Status
+Project is: _finished_ 
 
-* Services (job queues, cache servers, search engines, etc.)
+## Inspiration
+I was inspired by one of the teachers at the university to learn ruby on rails. I wanted to create a web application at the same time, which will not be very complicated and at the same time let me learn a lot. I did not want it to be some simple blog, so I decided to create its more advanced version 
 
-* Deployment instructions
-
-* ...
+## Contact
+Created by Piotr Stachaczyński (stachaczynski.piotr@gmail.com) 
