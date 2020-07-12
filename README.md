@@ -5,7 +5,6 @@ One of the first applications written by me while learning to create web applica
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Features](#features)
 * [Status](#status)
@@ -14,11 +13,6 @@ One of the first applications written by me while learning to create web applica
 
 ## General info
 There are several entities in the application. Like stories, comments, and users. The user can be an administrator or a regular user. Depending on the role, users rights change. For example, the administrator can manage users
-
-## Screenshots
-![Homepage](http://oi66.tinypic.com/ixrqsw.jpg)
-![Movie view](http://oi66.tinypic.com/2rp7fw9.jpg)
-![Login page](http://oi65.tinypic.com/sbq4rd.jpg)
 
 ## Technologies
 * Ruby - version 2.3.3
